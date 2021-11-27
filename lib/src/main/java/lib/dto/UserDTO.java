@@ -4,6 +4,8 @@ import java.util.Objects;
 
 public class UserDTO {
     //un obiect dedicat transferului intre aplicatii, pastrez entitatile doar la nivel de server
+    //este ca o proiectie a entitatii user a ceea ce exista in BD, folosesc un obiect DTO pentru a lucra cu anumite atribute, nu toate
+    //ma ajuta sa departajez obiectele persistate de cele manageuite
 
     private int id;
 

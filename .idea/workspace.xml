@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91eea365-bfa5-4f98-81ea-3588572c9aa8" name="Changes" comment="" />
+    <list default="true" id="91eea365-bfa5-4f98-81ea-3588572c9aa8" name="Changes" comment="&quot;Project init&quot;">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/MainClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/target/classes/lib/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/classes/lib/dto/UserDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/server/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/server/service/UserServiceImpl.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,12 +50,15 @@
     <option name="myId2Visible">
       <map>
         <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="false" />
       </map>
     </option>
   </component>
   <component name="ProjectId" id="21PLl4mNF3wN2MWTyZkFeWKEcov" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,15 +69,54 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="azul-13" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/main/java/client/controller" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\NewTelMentorat\Java\Java2\ShoppingStoreFinalProjectJava2\client\src\main\java\client\controller" />
+      <recent name="D:\NewTelMentorat\Java\Java2\ShoppingStoreFinalProjectJava2\client\src\main\client" />
       <recent name="D:\NewTelMentorat\Java\Java2\ProiectFinalJava2\server\src\main\resources\META-INF" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\NewTelMentorat\Java\Java2\ShoppingStoreFinalProjectJava2\client\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainClient">
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="server.MainClass" />
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.MainClient" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainClient" />
+        <item itemvalue="Application.MainClass" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -68,6 +127,14 @@
       <option name="presentableId" value="Default" />
       <updated>1637837926817</updated>
     </task>
+    <task id="LOCAL-00001" summary="&quot;Project init&quot;">
+      <created>1637928249507</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637928249507</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,5 +148,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;Project init&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Project init&quot;" />
   </component>
 </project>
