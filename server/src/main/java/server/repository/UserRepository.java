@@ -37,7 +37,7 @@ public class UserRepository {
     //gasire user dupa userName
     public Optional<User> findByUsername(String username) {
 
-        TypedQuery<User> query = em.createQuery("User.findByUsername", User.class);
+        TypedQuery<User> query = em.createNamedQuery("User.findByUsername", User.class);
         query.setParameter("username", username);
 
         return query.getResultStream().findFirst();

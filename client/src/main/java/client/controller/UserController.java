@@ -10,7 +10,7 @@ import java.rmi.registry.Registry;
 
 public class UserController {
 
-    private static final class SingletonHolder{
+    private static final class SingletonHolder {
         public static final UserController INSTANCE = new UserController();
     }
 
@@ -35,7 +35,7 @@ public class UserController {
         try {
             return userService.login(userDTO);
         } catch (RemoteException e) {
-            throw new RuntimeException(e);
+           throw new RuntimeException(e);
         }
     }
 
@@ -46,5 +46,4 @@ public class UserController {
             throw new RuntimeException(e);
         }
     }
-
 }

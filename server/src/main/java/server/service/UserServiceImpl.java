@@ -29,7 +29,6 @@ public class UserServiceImpl extends UnicastRemoteObject implements UserService 
                 .findByUsername(userDTO.getUsername());
 
         return userOptional
-
                 .filter(user -> user.getPassword().equals(userDTO.getPassword()))
                 .map(User::getId) //fac un map pt ca eu vreau id
                 .orElseThrow(IllegalArgumentException::new);
@@ -43,7 +42,8 @@ public class UserServiceImpl extends UnicastRemoteObject implements UserService 
         if (userOptional.isEmpty()) { //daca nu gasesc dupa user
             return userRepository.createUsername(userDTO).getId();
         } else {
-            throw new IllegalArgumentException(); //username-ul este deja folosit
+            throw new IllegalArgumentException("This user already exist"); //username-ul este deja folosit
         }
     }
+
 }

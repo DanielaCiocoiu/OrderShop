@@ -1,8 +1,9 @@
 package lib.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class UserDTO {
+public class UserDTO implements Serializable {
     //un obiect dedicat transferului intre aplicatii, pastrez entitatile doar la nivel de server
     //este ca o proiectie a entitatii user a ceea ce exista in BD, folosesc un obiect DTO pentru a lucra cu anumite atribute, nu toate
     //ma ajuta sa departajez obiectele persistate de cele manageuite
@@ -19,7 +20,7 @@ public class UserDTO {
         this.password = password;
     }
 
-    public UserDTO() {
+    UserDTO() {
     }
 
     public int getId() {
@@ -35,23 +36,22 @@ public class UserDTO {
     }
 
     @Override
+    public String toString() {
+        return "UserDTO{" +
+                "username='" + username + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof UserDTO)) return false;
-        UserDTO userDto = (UserDTO) o;
-        return Objects.equals(username, userDto.username) && Objects.equals(password, userDto.password);
+        if (o == null || getClass() != o.getClass()) return false;
+        UserDTO userDTO = (UserDTO) o;
+        return id == userDTO.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, password);
-    }
-
-    @Override
-    public String toString() {
-        return "UserDto{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return Objects.hash(id);
     }
 }

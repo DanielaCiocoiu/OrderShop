@@ -22,9 +22,9 @@ public class LoginFrame extends JFrame {
             try {
                 int id = UserController.getInstance().login(userDTO);
 
-                JOptionPane.showMessageDialog(null, "Connected as " + id);
+                JOptionPane.showMessageDialog(null, "Conectat ca " + id);
             } catch (IllegalArgumentException e) {
-                JOptionPane.showMessageDialog(null, "Wrong username or password");
+                JOptionPane.showMessageDialog(null, "Username sau parola gresita");
                 passwordField1.setText("");
             }
         });
@@ -37,9 +37,9 @@ public class LoginFrame extends JFrame {
             try {
                 int id = UserController.getInstance().signin(userDTO);
 
-                JOptionPane.showMessageDialog(null, "Registered as " + id);
+                JOptionPane.showMessageDialog(null, "Intregistrat ca " + id);
             } catch (IllegalArgumentException e) {
-                JOptionPane.showMessageDialog(null, "Username used");
+                JOptionPane.showMessageDialog(null, "Username folosit");
                 passwordField1.setText("");
                 textField1.setText("");
             }

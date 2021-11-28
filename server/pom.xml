@@ -2,11 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <parent>
         <artifactId>ShoppingStoreFinalProjectJava2</artifactId>
         <groupId>org.example</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>server</artifactId>
@@ -16,14 +18,15 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.4.12.Final</version>
+            <version>5.4.18.Final</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.19</version>
+            <version>8.0.21</version>
         </dependency>
+
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>lib</artifactId>

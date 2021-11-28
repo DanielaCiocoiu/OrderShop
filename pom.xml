@@ -8,11 +8,7 @@
     <artifactId>ShoppingStoreFinalProjectJava2</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>server</module>
-        <module>lib</module>
-        <module>client</module>
-    </modules>
+
 
     <build>
         <plugins>
@@ -28,4 +24,9 @@
         </plugins>
     </build>
 
+    <modules>
+        <module>server</module>
+        <module>lib</module>
+        <module>client</module>
+    </modules>
 </project>
