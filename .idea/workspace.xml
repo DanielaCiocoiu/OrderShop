@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91eea365-bfa5-4f98-81ea-3588572c9aa8" name="Changes" comment="&quot;GUI, client&quot;">
-      <change afterPath="$PROJECT_DIR$/ShoppingStoreFinalProjectJava2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/client (1).iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lib (1).iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/server (1).iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/MainClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/target/classes/lib/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/classes/lib/dto/UserDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/MainServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/server/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/server/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/server/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/server/service/UserServiceImpl.class" afterDir="false" />
-    </list>
+    <list default="true" id="91eea365-bfa5-4f98-81ea-3588572c9aa8" name="Changes" comment="&quot;GUI, client&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,6 +110,14 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="&quot;GUI, client&quot;">
+      <created>1638128010780</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638128010780</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
