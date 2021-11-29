@@ -7,11 +7,10 @@ import java.util.Objects;
 @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username")
 //jpql gandeste in instante, selecteaza toate instantele de tip user, unde userName = username, :username - nameParameter
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private int id;
-
 
     @Column(nullable = false)
     private String username;
@@ -56,4 +55,3 @@ public class User {
         return Objects.hash(id);
     }
 }
-

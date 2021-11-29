@@ -20,7 +20,8 @@ public class UserController {
         try {
             Registry registry = LocateRegistry.getRegistry("localhost", 4545);
 
-            userService = (UserService) registry.lookup("userService"); //cauta in registru dupa "bind name".
+            //cauta in registru dupa "bind name".
+            userService = (UserService) registry.lookup("userService");
         } catch (RemoteException | NotBoundException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
@@ -35,7 +36,7 @@ public class UserController {
         try {
             return userService.login(userDTO);
         } catch (RemoteException e) {
-           throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
     }
 

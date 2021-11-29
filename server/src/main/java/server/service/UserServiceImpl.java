@@ -8,8 +8,6 @@ import server.repository.UserRepository;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Optional;
-
-
 // Mostenim UnicastRemoteObject pentru a putea expune in retea
 // implementarea UserServiceImpl
 public class UserServiceImpl extends UnicastRemoteObject implements UserService {
@@ -17,20 +15,18 @@ public class UserServiceImpl extends UnicastRemoteObject implements UserService 
     private UserRepository userRepository;
 
     public UserServiceImpl() throws RemoteException {
-
-        this.userRepository = new UserRepository();
+        userRepository = new UserRepository();
     }
 
-
     @Override
+    // caut user dupa username si daca exista filtrez dupa password
     public int login(UserDTO userDTO) throws RemoteException {
-        // caut user dupa username si daca exista filtrez dupa password
         Optional<User> userOptional = userRepository
                 .findByUsername(userDTO.getUsername());
 
         return userOptional
                 .filter(user -> user.getPassword().equals(userDTO.getPassword()))
-                .map(User::getId) //fac un map pt ca eu vreau id
+                .map(User::getId)//fac un map pt ca eu vreau id
                 .orElseThrow(IllegalArgumentException::new);
     }
 
@@ -39,11 +35,10 @@ public class UserServiceImpl extends UnicastRemoteObject implements UserService 
         Optional<User> userOptional = userRepository
                 .findByUsername(userDTO.getUsername());
 
-        if (userOptional.isEmpty()) { //daca nu gasesc dupa user
-            return userRepository.createUsername(userDTO).getId();
+        if (userOptional.isEmpty()) {//daca nu gasesc dupa user
+            return userRepository.create(userDTO).getId();
         } else {
-            throw new IllegalArgumentException("This user already exist"); //username-ul este deja folosit
+            throw new IllegalArgumentException(); //username-ul este deja folosit
         }
     }
-
 }
