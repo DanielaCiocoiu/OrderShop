@@ -1,38 +1,45 @@
 package server.model;
 
+import lib.dto.Category;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username")
+@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.userName = :userName")
 //jpql gandeste in instante, selecteaza toate instantele de tip user, unde userName = username, :username - nameParameter
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @Column(nullable = false)
-    private String username;
+    @EmbeddedId
+    private UserId userId;
 
     @Column(nullable = false)
     private String password;
 
-    public int getId() {
-        return id;
+    @Enumerated(EnumType.STRING)
+    private Category category;
+
+/*    @OneToMany(mappedBy = "user")
+    private Collection<OrderDTO> serviceOrders = new ArrayList<>();*/
+
+    public User(UserId userId, Category category) {
+        this.userId = userId;
+        this.category = category;
+
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public User(){
     }
 
-    public String getUsername() {
-        return username;
+
+    public UserId getUserId() {
+        return userId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserId(UserId userId) {
+        this.userId = userId;
     }
+
 
     public String getPassword() {
         return password;
@@ -42,16 +49,24 @@ public class User {
         this.password = password;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id;
+        return Objects.equals(userId, user.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(userId);
     }
 }

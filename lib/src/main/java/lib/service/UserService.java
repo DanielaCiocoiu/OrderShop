@@ -7,7 +7,9 @@ import java.rmi.RemoteException;
 
 public interface UserService extends Remote {
 
-    int login(UserDTO userDTO) throws RemoteException;
+    boolean create(UserDTO userDTO) throws RemoteException;
 
-    int signin(UserDTO userDTO) throws RemoteException;
+    UserDTO loginWithUsername(String userName, String password) throws RemoteException;
+
+   // int signin(UserDTO userDTO) throws RemoteException;
 }

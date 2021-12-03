@@ -1,6 +1,8 @@
 package lib.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class UserDTO implements Serializable {
@@ -8,50 +10,65 @@ public class UserDTO implements Serializable {
     //este ca o proiectie a entitatii user a ceea ce exista in BD, folosesc un obiect DTO pentru a lucra cu anumite atribute, nu toate
     //ma ajuta sa departajez obiectele persistate de cele manageuite
 
-    private int id;
-
-    private String username;
+    private UserIdDTO userId;
 
     private String password;
 
-    public UserDTO(int id, String username, String password) {
-        this.id = id;
-        this.username = username;
+    private Category category;
+
+    private List<OrderDTO> serviceOrderDtos = new ArrayList<>();
+
+    public UserDTO(UserIdDTO userId, String password, Category category) {
+        this.userId = userId;
         this.password = password;
+        this.category = category;
     }
 
-    UserDTO() {
+    public UserDTO() {
     }
 
-    public int getId() {
-        return id;
+    public UserIdDTO getUserId() {
+        return userId;
     }
 
-    public String getUsername() {
-        return username;
+    public void setUserId(UserIdDTO userId) {
+        this.userId = userId;
     }
 
     public String getPassword() {
         return password;
     }
 
-    @Override
-    public String toString() {
-        return "UserDTO{" +
-                "username='" + username + '\'' +
-                '}';
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public List<OrderDTO> getServiceOrderDtos() {
+        return serviceOrderDtos;
+    }
+
+    public void setServiceOrderDtos(List<OrderDTO> serviceOrderDtos) {
+        this.serviceOrderDtos = serviceOrderDtos;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof UserDTO)) return false;
         UserDTO userDTO = (UserDTO) o;
-        return id == userDTO.id;
+        return Objects.equals(userId, userDTO.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(userId);
     }
 }
