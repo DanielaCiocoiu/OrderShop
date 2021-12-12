@@ -2,12 +2,18 @@ package server.dao.interfaces;
 
 import server.model.User;
 
+import java.util.Collection;
 import java.util.Optional;
 
 public interface UserDao {
-    boolean create(User user);
+
+    boolean persist(User user);
 
     Optional<User> findByUsername(String userName);
+
+    Collection<User> findAll();
+
+    boolean delete(User user);
 
 
 }

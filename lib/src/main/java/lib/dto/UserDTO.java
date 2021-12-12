@@ -14,18 +14,16 @@ public class UserDTO implements Serializable {
 
     private String password;
 
-    private Category category;
-
     private List<OrderDTO> serviceOrderDtos = new ArrayList<>();
 
-    public UserDTO(UserIdDTO userId, String password, Category category) {
+    public UserDTO(UserIdDTO userId, String password) {
         this.userId = userId;
         this.password = password;
-        this.category = category;
     }
 
     public UserDTO() {
     }
+
 
     public UserIdDTO getUserId() {
         return userId;
@@ -41,14 +39,6 @@ public class UserDTO implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 
     public List<OrderDTO> getServiceOrderDtos() {
@@ -70,5 +60,13 @@ public class UserDTO implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(userId);
+    }
+
+    @Override
+    public String toString() {
+        return "UserDTO: " +
+                "  userId: " + userId +
+                ", password: " + password +
+                ", serviceOrderDtos: " + serviceOrderDtos;
     }
 }

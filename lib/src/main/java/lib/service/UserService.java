@@ -1,9 +1,11 @@
 package lib.service;
 
 import lib.dto.UserDTO;
+import lib.dto.UserIdDTO;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.Collection;
 
 public interface UserService extends Remote {
 
@@ -11,5 +13,7 @@ public interface UserService extends Remote {
 
     UserDTO loginWithUsername(String userName, String password) throws RemoteException;
 
-   // int signin(UserDTO userDTO) throws RemoteException;
+    boolean delete(UserDTO userDTO) throws RemoteException;
+
+    Collection<UserDTO> findAll() throws RemoteException;
 }

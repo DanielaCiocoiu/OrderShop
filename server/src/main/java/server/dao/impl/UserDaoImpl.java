@@ -1,20 +1,17 @@
 package server.dao.impl;
 
-import lib.dto.UserDTO;
-import lib.service.UserService;
+import server.convert.UserConvertor;
 import server.dao.interfaces.UserDao;
+import server.model.Product;
 import server.model.User;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
+import java.util.Collection;
 import java.util.Optional;
 // Mostenim UnicastRemoteObject pentru a putea expune in retea
 // implementarea UserServiceImpl
 public class UserDaoImpl implements UserDao {
-
 
     private final EntityManager entityManager;
 
@@ -23,14 +20,23 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean create(User user){
+    public boolean persist(User user){
         entityManager.getTransaction().begin();
         entityManager.persist(user);
         entityManager.getTransaction().commit();
 
-        return  entityManager.getTransaction().getRollbackOnly();
+       return  entityManager.getTransaction().getRollbackOnly();
 
     }
+
+    @Override
+    public boolean delete(User user){
+        entityManager.getTransaction().begin();
+        entityManager.remove(user);
+        entityManager.getTransaction().commit();
+        return  entityManager.getTransaction().getRollbackOnly();
+    }
+
 
     @Override
     public Optional<User> findByUsername(String userName){
@@ -38,6 +44,13 @@ public class UserDaoImpl implements UserDao {
         TypedQuery<User> namedQuery = entityManager.createNamedQuery("User.findByUsername", User.class);
         namedQuery.setParameter("userName", userName);
         return namedQuery.getResultStream().findFirst();
+    }
+
+    @Override
+    public Collection<User> findAll() {
+        var query = entityManager.createQuery("SELECT u FROM User u", User.class);
+
+        return query.getResultList();
     }
 
 

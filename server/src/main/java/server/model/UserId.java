@@ -1,9 +1,11 @@
-package lib.dto;
+package server.model;
 
+import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class UserIdDTO implements Serializable {
+@Embeddable
+public class UserId implements Serializable {
 
     private String userName;
 
@@ -15,23 +17,16 @@ public class UserIdDTO implements Serializable {
         this.userName = userName;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof UserIdDTO)) return false;
-        UserIdDTO userIdDTO = (UserIdDTO) o;
-        return userName.equals(userIdDTO.userName);
+        if (!(o instanceof UserId)) return false;
+        UserId userId = (UserId) o;
+        return Objects.equals(userName, userId.userName);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(userName);
-    }
-
-    @Override
-    public String toString() {
-        return "UserIdDTO: " +
-                "user: " + userName;
     }
 }

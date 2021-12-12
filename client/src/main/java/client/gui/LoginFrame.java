@@ -6,11 +6,12 @@ import lib.dto.UserDTO;
 import lib.dto.UserIdDTO;
 
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
-import java.util.regex.Pattern;
 
 public class LoginFrame extends JFrame {
     private JTextField usernameField;
@@ -19,16 +20,27 @@ public class LoginFrame extends JFrame {
     private JButton registerButton;
     private JPanel mainPanel;
 
-    private final String [] category = {"GROCERY", "TEXTILE", "BEAUTY"};
-    private final String [] fieldLabel = {"username", "password"};
-
     private List<String> userfields = new ArrayList<>();
     private JComboBox comboBoxCategory;
-    private List<JLabel> fieldsLabels;
-    private JLabel allFieldsLabel;
+    private JList usersList;
+
+    private DefaultListModel<UserDTO> model;
 
 
     public LoginFrame() {
+        model = new DefaultListModel<>();
+        usersList.setModel(model);
+
+        usersList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    onMouseClickedForList(e);
+                } catch (RemoteException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
 
         comboBoxCategory.addItem(Category.GROCERY);
         comboBoxCategory.addItem(Category.TEXTILE);
@@ -38,10 +50,10 @@ public class LoginFrame extends JFrame {
         logInButton.addActionListener(ev -> login());
         registerButton.addActionListener(ev -> register());
 
-
+        displayUsers();
         setContentPane(mainPanel);
         pack();
-        setSize(700, 500);
+        setSize(500, 500);
         setLocationRelativeTo(null);
         setTitle("LoginFrame");
         setVisible(true);
@@ -49,24 +61,53 @@ public class LoginFrame extends JFrame {
 
     }
 
-    private void register(){ addUser(); }
+    private void onMouseClickedForList(MouseEvent e) throws RemoteException {
+        boolean isItemSelected = usersList.getSelectedValue() != null;
+        if (isItemSelected && e.getButton() == MouseEvent.BUTTON1 &&
+                e.getClickCount() == 2) {
+            UserDTO selected = (UserDTO) usersList.getSelectedValue();
+            new ProductFrame(selected);
+        }
+        if (isItemSelected &&
+                e.getButton() == MouseEvent.BUTTON3 &&
+                e.getClickCount() == 2) {
+            UserDTO selected = (UserDTO) usersList.getSelectedValue();
+            boolean rez = UserController.getInstance()
+                    .delete(selected);
+            if (rez) { //update lista
+                displayUsers();
+            }
+        }
+    }
 
-    private void login(){ validCredentials(); }
+    private void register() {
+        addUser();
+    }
+
+    private void login() {
+        validCredentials();
+    }
 
     private void addUserFields() {
         UserDTO userDTO = new UserDTO();
         userfields.add(userDTO.getUserId().getUserName());
-        userfields.add(userDTO.getCategory().toString());
+    }
+
+    protected void displayUsers() {
+        var userDTOS = UserController.getInstance().findAll();
+        model.clear();
+        userDTOS.forEach(model::addElement); //sau p -> model.addElement(p)
     }
 
     public boolean validCredentials() {
         if (!usernameField.getText().equals("")) {
             try {
-                UserDTO userDto = UserController.getInstance()
+                UserDTO userDTO = UserController.getInstance()
                         .loginWithUsername(usernameField.getText(), new String(passwordField.getPassword()));
 
                 JOptionPane.showMessageDialog(null, "Connected as " + usernameField.getText());
-                new ProductFrame();
+                displayUsers();
+                new ProductFrame(userDTO);
             } catch (IllegalArgumentException e) {
                 JOptionPane.showMessageDialog(null, "Wrong username or password");
                 passwordField.setText("");
@@ -75,12 +116,9 @@ public class LoginFrame extends JFrame {
         return false;
     }
 
-    public void addUser(){
+    public void addUser() {
         try {
             if (validFields()) {
-
-                Category category = (Category) comboBoxCategory.getSelectedItem();
-
                 UserIdDTO userIdDTO = new UserIdDTO();
                 userIdDTO.setUserName(usernameField.getText());
 
@@ -88,75 +126,44 @@ public class LoginFrame extends JFrame {
                 userDto.setUserId(userIdDTO);
 
                 userDto.setPassword(new String(passwordField.getPassword()));
-                userDto.setCategory(category);
 
                 if (!UserController.getInstance().create(userDto)) {
                     JOptionPane.showMessageDialog(null, "User created");
-                    resetFileds();
                 }
             }
-        }catch(NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "User allready exists");
         }
     }
 
-
-/*    private Category getCategory(){
-        return radioButtons.stream()
-                .filter(AbstractButton::isSelected)
-                .map(e -> Category.valueOf(e.getActionCommand()))
-                .findFirst()
-                .orElseThrow();
-    }*/
-
-
-    private boolean validFields(){
-        if(usernameField.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"Enter username");
+    private boolean validFields() {
+        if (usernameField.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Enter username");
             return false;
         }
-        if(usernameField.getText().length() < 3){
+        if (usernameField.getText().length() < 3) {
             JOptionPane.showMessageDialog(null, "Username must have atleast 3 characters");
             return false;
         }
-        if(String.valueOf(passwordField.getPassword()).equals("")){
+        if (String.valueOf(passwordField.getPassword()).equals("")) {
             JOptionPane.showMessageDialog(null, "Enter password");
             return false;
         }
-        if(comboBoxCategory.getSelectedItem() == null){
+        if (comboBoxCategory.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(null, "Select a category");
             return false;
         }
         return true;
     }
 
-/*    private Optional<JRadioButton> radioButtonIsSelected(){
-        return radioButtons.stream()
-                .filter( s -> s.isSelected())
-                .findAny();
-
-    }*/
-
-
-    private void resetFileds(){
+    private void resetFileds() {
         usernameField.setText("");
         passwordField.setText("");
     }
 
 
-
-/*    private void initAllFieldsLabels(){
-        fieldsLabels = new ArrayList<>();
-        for(int i = 0; i < 5; i++ ){
-            allFieldsLabel = new JLabel(fieldLabel[i]);
-            allFieldsLabel.setBounds(50, 70 + i*60, 140, 30);
-            fieldsLabels.add(allFieldsLabel);
-            mainPanel.add(allFieldsLabel);
-        }
-    } ------------------- */
-/*
-                logInButton.addActionListener(ev -> {
+   /*       logInButton.addActionListener(ev -> {
             String username = textField1.getText();
             String password = new String(passwordField1.getPassword());
             UserDTO userDTO = new UserDTO(0, username, password);
