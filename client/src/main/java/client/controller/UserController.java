@@ -10,12 +10,13 @@ import java.rmi.registry.Registry;
 import java.util.Collection;
 
 public class UserController  implements UserService{
-    private UserService userService;
 
+    private UserService userService;
 
     private static final class SingletonHolder {
         public static final UserController INSTANCE = new UserController();
     }
+
     public static UserController getInstance(){
         return SingletonHolder.INSTANCE;
     }
@@ -51,10 +52,6 @@ public class UserController  implements UserService{
         }
     }
 
-    public boolean delete(UserDTO userDTO) throws RemoteException {
-        return userService.delete(userDTO);
-    }
-
     public Collection<UserDTO> findAll() {
         try {
             return userService.findAll();
@@ -64,20 +61,4 @@ public class UserController  implements UserService{
         }
     }
 
-  /*  public int login(UserDTO userDTO) {
-        try {
-            return userService.create(userDTO);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }*/
-
-/*    public int signin(UserDTO userDTO) {
-        try {
-            return userService.signin(userDTO);
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
-        }
-    }*/
 }

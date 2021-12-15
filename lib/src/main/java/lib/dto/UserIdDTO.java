@@ -31,7 +31,6 @@ public class UserIdDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "UserIdDTO: " +
-                "user: " + userName;
+        return userName;
     }
 }

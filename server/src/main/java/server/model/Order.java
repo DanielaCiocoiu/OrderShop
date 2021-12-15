@@ -23,7 +23,7 @@ public class Order {
     @ElementCollection
     private Set<String> telephones = new HashSet<>();
 
-    //ownwr-ul
+    //owner-ul
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "join_order_product",
@@ -34,10 +34,6 @@ public class Order {
    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    public Order(int id, double total) {
-        this.id = id;
-        this.total = total;
-    }
     public Order() {
     }
 

@@ -15,7 +15,7 @@ public class MainServer {
             // Creez un registru cu rol de DNS care va rula pe portul 4545
             Registry registry = LocateRegistry.createRegistry(4545);
             //obiectul creat de server si accesat remote de Client prin lookup
-            // Expun instanta de MyServiceImpl sub cheia de "myService"
+            // Expun instanta de UserServiceImpl sub cheia de "userService"
             registry.rebind("userService", new UserServiceImpl());
             registry.rebind("productService", new ProductServiceImpl());
             registry.rebind("orderService", new OrderServiceImpl());
@@ -26,10 +26,6 @@ public class MainServer {
             throw new RuntimeException(e);
         }
 
-        //o aplicatie de client care isi va loga pe contul deja creat
-        //o interfata grafica pe client cu username, parola, un buton de login si signin
-        //aceasta fereastra face un request catre server, care va vedea in baza de date si va vedea daca exista deja un username cu username-ul respectic
-        //o aplicatie distribuita cu 3 nivele de arhitectura implementata  pe rmi
 
     }
 }

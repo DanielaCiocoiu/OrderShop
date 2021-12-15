@@ -2,6 +2,8 @@ package server.convert;
 
 import lib.dto.UserDTO;
 import lib.dto.UserIdDTO;
+import server.model.Order;
+import server.model.Product;
 import server.model.User;
 import server.model.UserId;
 
@@ -21,13 +23,13 @@ public class UserConvertor {
     }
 
     public static UserDTO convert(User user) {
-
         UserIdDTO userIdDto = new UserIdDTO();
-                    userIdDto.setUserName(user.getUserId().getUserName());
+                    userIdDto.setUserName(user.getUserId());
 
         UserDTO userDto = new UserDTO();
                     userDto.setUserId(userIdDto);
                     userDto.setPassword(user.getPassword());
        return userDto;
     }
+
 }

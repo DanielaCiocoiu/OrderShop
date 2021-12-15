@@ -1,5 +1,7 @@
 package server.dao.interfaces;
 
+import lib.dto.ProductDTO;
+import lib.dto.UserDTO;
 import lib.dto.UserIdDTO;
 import server.model.Product;
 import server.model.User;
@@ -12,8 +14,11 @@ public interface ProductDao {
 
     Collection<Product> findAll();
 
-    Collection<Product> findByUser(UserIdDTO userId);
+    Collection<Product> findProductsByUser(UserIdDTO userId);
 
     Product getById(int id);
 
+    void  delete(Product product);
+
+   // Product findProductByUser(int id);
 }

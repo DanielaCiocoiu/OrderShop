@@ -14,6 +14,29 @@ import java.util.Optional;
 public class OrderConvertor {
     private OrderConvertor() {}
 
+
+    public static OrderDTO convert(Order order) {
+        UserDTO userDTO = UserConvertor.convert(order.getUser());
+
+        OrderDTO orderDTO = new OrderDTO.Builder()
+                .setTotal(order.getTotal())
+                .setTimestamp(order.getTimestamp())
+                .setTelephones(new HashSet<>(order.getTelephones()))
+                .setIdProducts(Collections.emptySet())
+                .setUser(userDTO)
+                .build();
+
+        Optional.ofNullable(order.getAddress())
+                .ifPresent(address -> {
+                    orderDTO.setAddress(new AddressDTO(
+                            address.getStreet(),
+                            address.getNumber()
+                    ));
+                });
+
+        return orderDTO;
+    }
+
     public static Order convert(OrderDTO orderDto) {
 
       User user = UserConvertor.convert(orderDto.getUserDTO());
@@ -38,25 +61,5 @@ public class OrderConvertor {
 
     }
 
-    public static OrderDTO convert(Order order) {
-       UserDTO userDTO = UserConvertor.convert(order.getUser());
 
-        OrderDTO orderDTO = new OrderDTO.Builder()
-                .setTotal(order.getTotal())
-                .setTimestamp(order.getTimestamp())
-                .setTelephones(new HashSet<>(order.getTelephones()))
-                .setIdProducts(Collections.emptySet())
-                .setUser(userDTO)
-                .build();
-
-        Optional.ofNullable(order.getAddress())
-                .ifPresent(address -> {
-                    orderDTO.setAddress(new AddressDTO(
-                            address.getStreet(),
-                            address.getNumber()
-                    ));
-                });
-
-        return orderDTO;
-    }
 }

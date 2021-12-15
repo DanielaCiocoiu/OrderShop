@@ -10,13 +10,16 @@ import java.util.Objects;
 
 @Entity
 @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.userId.userName = :userName")
-//jpql gandeste in instante, selecteaza toate instantele de tip user, unde userName = username, :username - nameParameter
+//jpql gandeste in instante, selecteaza toate instantele de tip user, userName = username, :username - nameParameter
 public class User {
 
     @EmbeddedId
+    //cheie primara compusa implementata printr-un Embeddable
     private UserId userId;
 
     private String password;
+
+
 
     @OneToMany(mappedBy = "user")
     private Collection<Order> serviceOrders = new ArrayList<>();
@@ -25,8 +28,8 @@ public class User {
     }
 
 
-    public UserId getUserId() {
-        return userId;
+    public String getUserId() {
+        return userId.getUserName();
     }
 
     public void setUserId(UserId userId) {
@@ -65,9 +68,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User:  " +
-                "userId: " + userId +
-                ", password: " + password + '\'' +
-                ", serviceOrders: " + serviceOrders;
+        return "User:  " + userId;
     }
 }

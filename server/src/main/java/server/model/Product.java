@@ -1,13 +1,12 @@
 package server.model;
 
 import lib.dto.Category;
-import lib.dto.UserDTO;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@NamedQuery(name = "User.delete", query = "SELECT p FROM Product p WHERE p.id = :id")
 public class Product {
 
     @Id
@@ -24,17 +23,18 @@ public class Product {
     @ManyToMany(mappedBy = "products")
     private Set<Order> orders = new HashSet<>();
 
-    private UserDTO userDTO;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 
     public Product() {
     }
 
-    public UserDTO getUserDTO() {
-        return userDTO;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserDTO(UserDTO userDTO) {
-        this.userDTO = userDTO;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getId() {
@@ -84,7 +84,7 @@ public class Product {
                 ", productName: '" + productName + '\'' +
                 ", price: " + price +
                 ", orders: " + orders +
-                ", userDTO: " + userDTO;
+                ", User: " + user;
     }
 }
 

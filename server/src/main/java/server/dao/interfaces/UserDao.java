@@ -1,5 +1,7 @@
 package server.dao.interfaces;
 
+import lib.dto.UserDTO;
+import lib.dto.UserIdDTO;
 import server.model.User;
 
 import java.util.Collection;
@@ -13,7 +15,7 @@ public interface UserDao {
 
     Collection<User> findAll();
 
-    boolean delete(User user);
+ // boolean  delete(UserDTO userId);
 
-
+  //  Optional<User>delete(User user);
 }

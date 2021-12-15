@@ -20,7 +20,6 @@ public class OrderServiceImpl extends UnicastRemoteObject
     implements OrderService {
 
     private final OrderDao orderDao;
-
     private final ProductDao productDao;
     private final UserDao userDao;
 

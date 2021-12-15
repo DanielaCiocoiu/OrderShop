@@ -5,9 +5,13 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
+//coloana acestei clase va constitui cheia compusa
 public class UserId implements Serializable {
 
     private String userName;
+
+    public UserId() {
+    }
 
     public String getUserName() {
         return userName;
@@ -27,6 +31,6 @@ public class UserId implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName);
+        return Objects.hash(this.userName);
     }
 }

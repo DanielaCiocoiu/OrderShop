@@ -22,6 +22,7 @@ public class ProductDTO implements Serializable {
         this.userDTO = userDTO;
     }
 
+
     public Category getCategory() {
         return category;
     }
@@ -32,10 +33,6 @@ public class ProductDTO implements Serializable {
 
     public UserDTO getUserDTO() {
         return userDTO;
-    }
-
-    public void setUserDTO(UserDTO userDTO) {
-        this.userDTO = userDTO;
     }
 
     public int getId() {

@@ -31,9 +31,6 @@ public class OrderFrame extends JFrame {
         setSize(800, 800);
         setLocationRelativeTo(null);
         setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-
     }
 
     private void refresh() {

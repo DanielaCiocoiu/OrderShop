@@ -13,7 +13,7 @@ public interface UserService extends Remote {
 
     UserDTO loginWithUsername(String userName, String password) throws RemoteException;
 
-    boolean delete(UserDTO userDTO) throws RemoteException;
+  //  boolean delete(UserDTO userId) throws RemoteException;
 
     Collection<UserDTO> findAll() throws RemoteException;
 }

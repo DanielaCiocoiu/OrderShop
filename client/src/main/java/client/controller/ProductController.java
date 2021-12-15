@@ -49,17 +49,25 @@ public class ProductController {
             return productService.findAll();
         } catch (RemoteException e) {
             e.printStackTrace();
-
             throw new RuntimeException(e);
         }
     }
 
-    public Collection<ProductDTO> findByUser(UserIdDTO userId) {
+    public Collection<ProductDTO> findProductsByUser(UserIdDTO userId) {
         try {
-            return productService.findByUser(userId);
+            return productService.findProductsByUser(userId);
         } catch (RemoteException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
+    public void delete(ProductDTO productDTO ){
+        try {
+           productService.delete(productDTO);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
 }

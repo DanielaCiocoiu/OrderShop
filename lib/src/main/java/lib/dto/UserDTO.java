@@ -8,7 +8,7 @@ import java.util.Objects;
 public class UserDTO implements Serializable {
     //un obiect dedicat transferului intre aplicatii, pastrez entitatile doar la nivel de server
     //este ca o proiectie a entitatii user a ceea ce exista in BD, folosesc un obiect DTO pentru a lucra cu anumite atribute, nu toate
-    //ma ajuta sa departajez obiectele persistate de cele manageuite
+    //ma ajuta sa departajez obiectele persistate de cele pe care le administrez
 
     private UserIdDTO userId;
 
@@ -64,9 +64,6 @@ public class UserDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "UserDTO: " +
-                "  userId: " + userId +
-                ", password: " + password +
-                ", serviceOrderDtos: " + serviceOrderDtos;
+        return "" + userId;
     }
 }

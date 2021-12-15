@@ -10,6 +10,9 @@ public class Address {
 
     private String number;
 
+    public Address() {
+    }
+
     public String getStreet() {
         return street;
     }

@@ -1,6 +1,7 @@
 package lib.service;
 
 import lib.dto.ProductDTO;
+import lib.dto.UserDTO;
 import lib.dto.UserIdDTO;
 
 import java.rmi.Remote;
@@ -13,5 +14,9 @@ public interface ProductService extends Remote {
 
     Collection<ProductDTO> findAll() throws RemoteException;
 
-    Collection<ProductDTO> findByUser(UserIdDTO userId) throws RemoteException;
+    Collection<ProductDTO> findProductsByUser(UserIdDTO userId) throws RemoteException;
+
+   void delete(ProductDTO productDto) throws RemoteException;
+
+   // ProductDTO findProductByUser(int id) throws RemoteException;
 }
