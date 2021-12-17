@@ -18,5 +18,4 @@ public interface ProductService extends Remote {
 
    void delete(ProductDTO productDto) throws RemoteException;
 
-   // ProductDTO findProductByUser(int id) throws RemoteException;
 }

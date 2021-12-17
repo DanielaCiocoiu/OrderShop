@@ -20,6 +20,7 @@ public class LoginFrame extends JFrame {
     private JPanel mainPanel;
     private JComboBox comboBoxCategory;
     private JList usersList;
+    private JTextField cnpField;
     private DefaultListModel<UserDTO> model;
 
 
@@ -78,15 +79,16 @@ public class LoginFrame extends JFrame {
     public boolean validCredentials() {
         if (!usernameField.getText().equals("")) {
             try {
-                UserDTO userDTO = UserController.getInstance()
-                        .loginWithUsername(usernameField.getText(), new String(passwordField.getPassword()));
+
+                          UserDTO userDTO = UserController.getInstance()
+                        .loginWithUsername(usernameField.getText(), new String(passwordField.getPassword()), cnpField.getText());
 
                 JOptionPane.showMessageDialog(null, "Connected as " + usernameField.getText());
                 displayUsers();
                 new ProductFrame(userDTO);
             } catch (IllegalArgumentException e) {
                 JOptionPane.showMessageDialog(null, "Wrong username or password");
-                passwordField.setText("");
+               passwordField.setText("");
             }
         }
         return false;
@@ -97,6 +99,7 @@ public class LoginFrame extends JFrame {
             if (validFields()) {
                 UserIdDTO userIdDTO = new UserIdDTO();
                 userIdDTO.setUserName(usernameField.getText());
+                userIdDTO.setCNP(cnpField.getText());
 
                 UserDTO userDto = new UserDTO();
                 userDto.setUserId(userIdDTO);
@@ -126,6 +129,7 @@ public class LoginFrame extends JFrame {
             JOptionPane.showMessageDialog(null, "Enter password");
             return false;
         }
+
         if (comboBoxCategory.getSelectedItem() == null) {
             JOptionPane.showMessageDialog(null, "Select a category");
             return false;

@@ -12,7 +12,6 @@ import javax.transaction.Transactional;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Collection;
-import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 public class ProductServiceImpl extends UnicastRemoteObject
@@ -59,7 +58,6 @@ public class ProductServiceImpl extends UnicastRemoteObject
         productDao.getById(productDTO.getId());
         if (productDTO != null) {
              productDao.delete(product);
-
         }
 
     }

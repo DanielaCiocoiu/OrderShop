@@ -37,8 +37,8 @@ public class AddressDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "AddressDTO: " +
+        return "Address: " +
                 "street: " + street +
-                ", number: " + number;
+                ", number: " + number + " ";
     }
 }

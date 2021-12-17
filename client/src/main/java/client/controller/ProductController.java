@@ -1,7 +1,6 @@
 package client.controller;
 
 import lib.dto.ProductDTO;
-import lib.dto.UserDTO;
 import lib.dto.UserIdDTO;
 import lib.service.ProductService;
 
@@ -30,7 +29,7 @@ public class ProductController {
         public static final ProductController INSTANCE = new ProductController();
     }
 
-    public static ProductController getInstance() {
+      public static ProductController getInstance() {
         return SingletonHolder.INSTANCE;
     }
 

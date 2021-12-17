@@ -122,7 +122,6 @@ public class OrderDTO implements Serializable {
         this.userDTO = userDTO;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -138,13 +137,11 @@ public class OrderDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "OrderDTO: " +
-                "id: " + id +
-                ", total: " + total +
-                ", timestamp: " + timestamp +
-                ", addressDTO: " + addressDTO +
-                ", telephones: " + telephones +
-                ", idProducts: " + idProducts +
-                ", userDTO: " + userDTO;
+        return  "Id Order: " + id + "\n" +
+                ",  Total: " + total + "\n" +
+                ",  Timestamp: " + timestamp + "\n" +
+                ",  " + addressDTO + "\r\n" +
+                ",  Telephones: " + telephones;
+
     }
 }

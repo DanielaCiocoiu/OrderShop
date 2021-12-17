@@ -23,18 +23,6 @@ public class ProductDTO implements Serializable {
     }
 
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public UserDTO getUserDTO() {
-        return userDTO;
-    }
-
     public int getId() {
         return id;
     }
@@ -59,6 +47,21 @@ public class ProductDTO implements Serializable {
         this.price = price;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public UserDTO getUserDTO() {
+        return userDTO;
+    }
+
+    public void setUserDTO(UserDTO userDTO) {
+        this.userDTO = userDTO;
+    }
 
     @Override
     public boolean equals(Object o) {

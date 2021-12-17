@@ -1,41 +1,42 @@
 package server.model;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
-@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.userId.userName = :userName")
+@NamedQueries({
+        @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.userId.userName = :userName"),
+        @NamedQuery(name = "User.findByCNP", query = "SELECT u FROM User u WHERE u.userId.CNP = :CNP")})
 //jpql gandeste in instante, selecteaza toate instantele de tip user, userName = username, :username - nameParameter
 public class User {
 
-    @EmbeddedId
     //cheie primara compusa implementata printr-un Embeddable
+    @EmbeddedId
     private UserId userId;
-
     private String password;
 
 
-
     @OneToMany(mappedBy = "user")
-    private Collection<Order> serviceOrders = new ArrayList<>();
+    private List<Order> serviceOrders = new ArrayList<>();
 
     public User() {
     }
 
-
-    public String getUserId() {
+//Pentru a accesa individual atributele userName si CNP din cod Java trebuie sa trecem prin obiectul userId in felul urmator:
+    public String getUserIdUserName() {
         return userId.getUserName();
+    }
+
+    public String getUserIdCNP() {
+        return userId.getCNP();
     }
 
     public void setUserId(UserId userId) {
         this.userId = userId;
     }
-
 
     public String getPassword() {
         return password;
@@ -45,11 +46,11 @@ public class User {
         this.password = password;
     }
 
-    public Collection<Order> getServiceOrders() {
+    public List<Order> getServiceOrders() {
         return serviceOrders;
     }
 
-    public void setServiceOrders(Collection<Order> serviceOrders) {
+    public void setServiceOrders(List<Order> serviceOrders) {
         this.serviceOrders = serviceOrders;
     }
 

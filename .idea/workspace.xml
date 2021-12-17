@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91eea365-bfa5-4f98-81ea-3588572c9aa8" name="Changes" comment="&quot;improve Address, Category, Loggin&quot;">
+    <list default="true" id="91eea365-bfa5-4f98-81ea-3588572c9aa8" name="Changes" comment="&quot;delete&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/client/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/client/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/OrderFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/OrderFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/OrderFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/OrderFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/ProductFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/ProductFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/ProductFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/ProductFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/AddressDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/AddressDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/OrderDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/ProductDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserIdDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserIdDTO.java" afterDir="false" />
@@ -19,15 +22,11 @@
       <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/target/classes/lib/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/classes/lib/dto/UserDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/target/classes/lib/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/classes/lib/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/MainServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/convert/OrderConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/convert/OrderConvertor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/convert/ProductConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/convert/ProductConvertor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/convert/UserConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/convert/UserConvertor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/dao/impl/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/dao/impl/ProductDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/dao/interfaces/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/dao/interfaces/ProductDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/dao/interfaces/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/dao/interfaces/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/model/Address.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/model/User.java" afterDir="false" />
@@ -35,6 +34,7 @@
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/service/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/service/ProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/classes/server/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/server/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/classes/server/repository/UserRepository.class" beforeDir="false" />
@@ -108,7 +108,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="216" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="358" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JAVA2_WED_JUL_2020-master/curs6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JAVA2_FRI_FEB_2020-master/curs9/java2c9e1" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.42873564" />
@@ -135,6 +135,7 @@
     <configuration name="MainClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.MainClient" />
       <module name="client" />
+      <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="client.*" />
@@ -148,6 +149,7 @@
     <configuration name="MainServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="server.MainServer" />
       <module name="server" />
+      <shortenClasspath name="ARGS_FILE" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="server.*" />
@@ -158,6 +160,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.MainClient" />
+      <item itemvalue="Application.MainServer" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainClient" />
@@ -216,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639321654589</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&quot;delete&quot;">
+      <created>1639597316882</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639597316883</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -259,7 +272,8 @@
     <MESSAGE value="&quot;GUI, client&quot;" />
     <MESSAGE value="&quot;improve User, UserDTO, UserService&quot;" />
     <MESSAGE value="&quot;improve Address, Category, Loggin&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;improve Address, Category, Loggin&quot;" />
+    <MESSAGE value="&quot;delete&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;delete&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -273,86 +287,94 @@
           <option name="timeStamp" value="30" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/client/controller/UserController.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/client/controller/OrderController.java</url>
           <line>36</line>
-          <option name="timeStamp" value="33" />
+          <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/client/controller/UserController.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/dao/impl/UserDaoImpl.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/dao/impl/UserDaoImpl.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/dao/impl/UserDaoImpl.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="102" />
+          <url>file://$PROJECT_DIR$/client/src/main/java/client/controller/OrderController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="138" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/client/gui/ProductFrame.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="103" />
+          <line>46</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/dao/impl/ProductDaoImpl.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="104" />
+          <url>file://$PROJECT_DIR$/server/src/main/java/server/convert/OrderConvertor.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/dao/impl/ProductDaoImpl.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="105" />
+          <url>file://$PROJECT_DIR$/client/src/main/java/client/gui/OrderFrame.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/client/controller/ProductController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/dao/impl/ProductDaoImpl.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="107" />
+          <line>37</line>
+          <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/client/gui/ProductFrame.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="108" />
+          <line>128</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lib/src/main/java/lib/dto/UserIdDTO.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/server/model/Order.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="160" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/server/model/User.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/server/convert/OrderConvertor.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/server/convert/OrderConvertor.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="165" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.ClassNotFoundException" memberName="detailMessage" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/server/src/main/java/server/service/ProductServiceImpl.java" line="31">
+        <watch expression="product.user" language="JAVA" />
+      </inline-watch>
+    </watches-manager>
   </component>
 </project>

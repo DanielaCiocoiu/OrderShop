@@ -31,7 +31,6 @@ public class ProductFrame extends JFrame {
 
     private DefaultListModel<ProductDTO> model = new DefaultListModel<>();
 
-
     public ProductFrame(UserDTO userDTO) {
         this.userDTO = userDTO;
 
@@ -41,47 +40,31 @@ public class ProductFrame extends JFrame {
 
         jProductList.setModel(model);
         jProductList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-
         findAllProducts();
-        displayProducts();
+
+        displayProductsByUserId();
         addProductButton.addActionListener(e -> addProduct());
+        addOrderButton.addActionListener(e -> addOrder());
 
 
-        addOrderButton.addActionListener(e -> {
-            var products = (List<ProductDTO>) jProductList.getSelectedValuesList();
+/*        jProductList.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                  var selected = (ProductDTO) jProductList.getSelectedValue();
 
-            if (!products.isEmpty()) {
-                var total = products.stream().mapToDouble(ProductDTO::getPrice).sum();
-                var ids = products.stream().map(ProductDTO::getId).collect(Collectors.toSet());
-
-                AddressDTO addressDTO = new AddressDTO(
-                        streetField.getText(),
-                        numberField.getText()
-                );
-
-                var order = new OrderDTO.Builder()
-                        .setTotal(total)
-                        .setTimestamp(Instant.now())
-                        .setAddressDTO(addressDTO)
-                        .setTelephones(Set.of(telephoneField.getText()))
-                        .setIdProducts(ids)
-                        .setUser(new UserDTO(new UserIdDTO(), " "))
-                        .build();
-
-                OrderController.getInstance().persist(order);
-
-                jProductList.setSelectedIndex(-1);
-            }
-        });
-
+                    if (selected != null && e.getClickCount() == 2) {
+                        new OrderFrame(selected.getId());
+                    }
+                }
+            });*/
 
         jProductList.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                var selected = (ProductDTO) jProductList.getSelectedValue();
-
-                if (selected != null && e.getClickCount() == 2) {
-                    new OrderFrame(selected.getId());
+                try {
+                    onMouseClickedForListOpenOrderFrame(e);
+                } catch (RemoteException ex) {
+                    ex.printStackTrace();
                 }
             }
         });
@@ -89,7 +72,7 @@ public class ProductFrame extends JFrame {
         jProductList.addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 try {
-                    jListKeyPressed(e);
+                    jListDeleteKeyPressed(e);
                 } catch (RemoteException ex) {
                     ex.printStackTrace();
                 }
@@ -98,12 +81,22 @@ public class ProductFrame extends JFrame {
 
         setTitle("Products");
         setContentPane(mainPanel);
-        setSize(500, 500);
+        setSize(700, 500);
         setLocationRelativeTo(null);
         setVisible(true);
     }
+        private void onMouseClickedForListOpenOrderFrame(MouseEvent e) throws RemoteException {
+            boolean isItemSelected = jProductList.getSelectedValue() != null;
+            if (isItemSelected && e.getButton() == MouseEvent.BUTTON1 &&
+                    e.getClickCount() == 2) {
+                ProductDTO selected = (ProductDTO) jProductList.getSelectedValue();
+                new OrderFrame(selected.getId());
+             }
+        }
 
-    private void jListKeyPressed(java.awt.event.KeyEvent keyEvent) throws RemoteException {
+
+
+    private void jListDeleteKeyPressed(java.awt.event.KeyEvent keyEvent) throws RemoteException {
 
         if (keyEvent.getKeyCode() == 127) {
             boolean isItemSelected = jProductList.getSelectedValue() != null;
@@ -115,7 +108,7 @@ public class ProductFrame extends JFrame {
                     ProductController.getInstance()
                             .delete(sel);
                 }
-                displayProducts();
+                displayProductsByUserId();
             }
         }
     }
@@ -132,10 +125,9 @@ public class ProductFrame extends JFrame {
                 Double.parseDouble(fieldPrice.getText()),
                 (Category) comboBoxCategory.getSelectedItem(),
                 userDTO
-
         );
         ProductController.getInstance().persist(productDTO);
-        displayProducts();
+        displayProductsByUserId();
 
         findAllProducts();
         fieldProductName.setText("");
@@ -143,7 +135,38 @@ public class ProductFrame extends JFrame {
         comboBoxCategory.getSelectedItem();
     }
 
-    public void displayProducts() {
+public void addOrder(){
+/*
+    UserIdDTO userIdDTO = new UserIdDTO();
+    userIdDTO.setUserName(getName());
+
+    UserDTO userDto = new UserDTO();
+    userDto.setUserId(userIdDTO);
+*/
+        var products = (List<ProductDTO>) jProductList.getSelectedValuesList();
+        if (!products.isEmpty()) {
+            var total = products.stream().mapToDouble(ProductDTO::getPrice).sum();
+            var ids = products.stream().map(ProductDTO::getId).collect(Collectors.toSet());
+
+            AddressDTO addressDTO = new AddressDTO(
+                    streetField.getText(),
+                    numberField.getText()
+            );
+
+            var order = new OrderDTO.Builder()
+                    .setTotal(total)
+                    .setTimestamp(Instant.now())
+                    .setAddressDTO(addressDTO)
+                    .setTelephones(Set.of(telephoneField.getText()))
+                    .setIdProducts(ids)
+                  //  .setUser(userDTO)
+                    .build();
+
+            OrderController.getInstance().persist(order);
+            jProductList.setSelectedIndex(-1);
+        }
+}
+    public void displayProductsByUserId() {
         var productDTOS = ProductController.getInstance().findProductsByUser(userDTO.getUserId());
         model.clear();
         productDTOS.forEach(model::addElement);

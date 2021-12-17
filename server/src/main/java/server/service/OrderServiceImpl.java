@@ -28,7 +28,7 @@ public class OrderServiceImpl extends UnicastRemoteObject
         var entityManager = entityManagerFactory.createEntityManager();
 
         orderDao = new OrderDaoImpl(entityManager);
-        productDao = new ProductDaoImpl(entityManagerFactory.createEntityManager()); //???????
+        productDao = new ProductDaoImpl(entityManagerFactory.createEntityManager());
         userDao = new UserDaoImpl(entityManager);
     }
 

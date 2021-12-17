@@ -6,6 +6,7 @@ import java.util.Objects;
 public class UserIdDTO implements Serializable {
 
     private String userName;
+    private String CNP;
 
     public String getUserName() {
         return userName;
@@ -15,6 +16,13 @@ public class UserIdDTO implements Serializable {
         this.userName = userName;
     }
 
+    public String getCNP() {
+        return CNP;
+    }
+
+    public void setCNP(String CNP) {
+        this.CNP = CNP;
+    }
 
     @Override
     public boolean equals(Object o) {

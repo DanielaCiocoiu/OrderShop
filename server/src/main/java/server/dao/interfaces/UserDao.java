@@ -15,7 +15,6 @@ public interface UserDao {
 
     Collection<User> findAll();
 
- // boolean  delete(UserDTO userId);
+    Optional<User> findByCNP(String emailAdress);
 
-  //  Optional<User>delete(User user);
 }

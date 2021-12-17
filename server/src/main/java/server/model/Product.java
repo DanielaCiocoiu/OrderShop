@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@NamedQuery(name = "User.delete", query = "SELECT p FROM Product p WHERE p.id = :id")
+//@NamedQuery(name = "User.delete", query = "DELETE p FROM Product p WHERE p.id = :id")
 public class Product {
 
     @Id

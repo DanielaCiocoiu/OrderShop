@@ -46,7 +46,10 @@ public class ProductDaoImpl implements ProductDao {
         return entityManager.find(Product.class, id);
     }
 
-
+    /*    EntityManager#remove() works only on entities which are managed in the current transaction/context.
+        In your case, you're retrieving the entity in an earlier transaction,
+        storing it in the HTTP session and then attempting to remove it in a different transaction/context.
+                First check if entity manager contains entity, then remove*/
     @Override
     public void delete(Product product) {
         entityManager.getTransaction().begin();
@@ -54,6 +57,7 @@ public class ProductDaoImpl implements ProductDao {
         if (product != null) {
             entityManager.remove(entityManager.contains(product) ? product : entityManager.merge(product));
             entityManager.getTransaction().commit();
+
         }
     }
 

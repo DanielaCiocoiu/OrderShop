@@ -43,9 +43,19 @@ public class UserController  implements UserService{
     }
 
     @Override
-    public UserDTO loginWithUsername(String userName, String password) {
+    public UserDTO loginWithUsername(String userName, String password, String CNP) {
         try {
-            return userService.loginWithUsername(userName, password);
+            return userService.loginWithUsername(userName, password, CNP);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public UserDTO loginWithCNP(String CNP, String password) throws RemoteException {
+        try {
+            return userService.loginWithCNP(CNP,password);
         } catch (RemoteException e) {
             e.printStackTrace();
             throw new RuntimeException(e);

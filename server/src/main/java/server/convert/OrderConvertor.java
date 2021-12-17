@@ -3,6 +3,7 @@ package server.convert;
 import lib.dto.AddressDTO;
 import lib.dto.OrderDTO;
 import lib.dto.UserDTO;
+import lib.dto.UserIdDTO;
 import server.model.Address;
 import server.model.Order;
 import server.model.User;
@@ -16,14 +17,15 @@ public class OrderConvertor {
 
 
     public static OrderDTO convert(Order order) {
-        UserDTO userDTO = UserConvertor.convert(order.getUser());
+
+//UserDTO userDTO = UserConvertor.convert(order.getUser());
 
         OrderDTO orderDTO = new OrderDTO.Builder()
                 .setTotal(order.getTotal())
                 .setTimestamp(order.getTimestamp())
                 .setTelephones(new HashSet<>(order.getTelephones()))
                 .setIdProducts(Collections.emptySet())
-                .setUser(userDTO)
+     //           .setUser(userDTO)
                 .build();
 
         Optional.ofNullable(order.getAddress())
@@ -34,12 +36,36 @@ public class OrderConvertor {
                     ));
                 });
 
+        orderDTO.setId(order.getId());
         return orderDTO;
     }
 
     public static Order convert(OrderDTO orderDto) {
 
-      User user = UserConvertor.convert(orderDto.getUserDTO());
+   //   User user = UserConvertor.convert(orderDto.getUserDTO());
+
+        Order order = new Order();
+        order.setId(orderDto.getId());
+        order.setTelephones(orderDto.getTelephones());
+        order.setTimestamp(orderDto.getTimestamp());
+        order.setTotal(orderDto.getTotal());
+  //      order.setUser(user);
+
+
+        Optional.ofNullable(orderDto.getAddress())
+                .ifPresent(addressDTO -> {
+                    var address = new Address();
+                    address.setNumber(addressDTO.getNumber());
+                    address.setStreet(addressDTO.getStreets());
+                    order.setAddress(address);
+                });
+
+        return order;
+
+    }
+
+/*    public static Order convert(OrderDTO orderDto) {
+        User user = UserConvertor.convert(orderDto.getUserDTO());
 
         Order order = new Order.Builder()
                 .setId(orderDto.getId())
@@ -59,7 +85,5 @@ public class OrderConvertor {
 
         return order;
 
-    }
-
-
+    }*/
 }

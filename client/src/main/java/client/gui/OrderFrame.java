@@ -1,22 +1,16 @@
 package client.gui;
 
 import client.controller.OrderController;
-import client.controller.ProductController;
 import lib.dto.OrderDTO;
-import lib.dto.ProductDTO;
 
 import javax.swing.*;
 
 public class OrderFrame extends JFrame {
-    private JList list1;
+    private JList orderList;
     private JPanel mainPanel;
 
-    private DefaultListModel<OrderDTO> model = new DefaultListModel<>();
-
     public OrderFrame(int productId) {
-
-        refresh();
-        
+        //refresh();
         
         var model = new DefaultListModel<>();
 
@@ -24,21 +18,21 @@ public class OrderFrame extends JFrame {
 
         orders.forEach(model::addElement);
 
-        list1.setModel(model);
+        orderList.setModel(model);
+
+
 
         setTitle("Orders");
         setContentPane(mainPanel);
-        setSize(800, 800);
+        setSize(900, 500);
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
-    private void refresh() {
+/*    private void refresh() {
         int productId = 0; // ????
         var orders = OrderController.getInstance().findByProductId(productId);
-
         model.clear();
-
         orders.forEach(model::addElement);
-    }
+    }*/
 }

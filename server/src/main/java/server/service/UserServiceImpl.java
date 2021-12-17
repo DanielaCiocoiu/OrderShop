@@ -8,7 +8,6 @@ import server.dao.interfaces.UserDao;
 import server.model.User;
 
 import javax.persistence.Persistence;
-import javax.transaction.Transactional;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Collection;
@@ -18,7 +17,7 @@ import java.util.stream.Collectors;
 
 public class UserServiceImpl extends UnicastRemoteObject implements UserService {
 
-    private final UserDao userDao;
+   private final UserDao userDao;
 
     public UserServiceImpl() throws RemoteException {
         var entityManagerFactory = Persistence.createEntityManagerFactory("ordershopPU");
@@ -29,15 +28,26 @@ public class UserServiceImpl extends UnicastRemoteObject implements UserService 
     @Override
     public boolean create(UserDTO userDTO) throws RemoteException {
         Optional<User> userUsername = userDao.findByUsername(userDTO.getUserId().getUserName());
-        if(userUsername.isEmpty()){
+        Optional<User> userCNP = userDao.findByCNP(userDTO.getUserId().getCNP());
+
+        if(userUsername.isEmpty() && userCNP.isEmpty()){
             User newUser = UserConvertor.convert(userDTO);
             return userDao.persist(newUser);
         }
         throw new NoSuchElementException();
     }
 
+
     @Override
-    public UserDTO loginWithUsername(String userName, String password) throws RemoteException {
+    public UserDTO loginWithCNP(String CNP, String password) throws RemoteException {
+        Optional<User> user = userDao.findByCNP(CNP);
+        return user.filter(u -> u.getPassword().equals(password))
+                .map(UserConvertor::convert)
+                .orElseThrow( NoSuchElementException::new);
+    }
+
+    @Override
+    public UserDTO loginWithUsername(String userName, String password, String CNP) throws RemoteException {
         Optional<User> user = userDao.findByUsername(userName);
         return user.filter(u -> u.getPassword().equals(password))
                 .map(UserConvertor::convert)

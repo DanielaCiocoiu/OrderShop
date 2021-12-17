@@ -4,13 +4,21 @@ import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
+//coloanele acestei clase vor constitui cheia compusa
 @Embeddable
-//coloana acestei clase va constitui cheia compusa
 public class UserId implements Serializable {
 
     private String userName;
+    private String CNP;
 
     public UserId() {
+    }
+    public String getCNP() {
+        return CNP;
+    }
+
+    public void setCNP(String CNP) {
+        this.CNP = CNP;
     }
 
     public String getUserName() {
@@ -26,11 +34,11 @@ public class UserId implements Serializable {
         if (this == o) return true;
         if (!(o instanceof UserId)) return false;
         UserId userId = (UserId) o;
-        return Objects.equals(userName, userId.userName);
+        return Objects.equals(userName, userId.userName) && Objects.equals(CNP, userId.CNP);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.userName);
+        return Objects.hash(userName, CNP);
     }
 }
