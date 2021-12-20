@@ -4,41 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91eea365-bfa5-4f98-81ea-3588572c9aa8" name="Changes" comment="&quot;delete&quot;">
+    <list default="true" id="91eea365-bfa5-4f98-81ea-3588572c9aa8" name="Changes" comment="&quot;order&quot;">
+      <change afterPath="$PROJECT_DIR$/ReadMe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/OrderFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/OrderFrame.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/OrderFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/OrderFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/client/gui/ProductFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/client/gui/ProductFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/AddressDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/AddressDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/OrderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserIdDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/dto/UserIdDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/lib/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/lib/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/target/classes/lib/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/classes/lib/dto/UserDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/target/classes/lib/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/target/classes/lib/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/target/classes/lib/dto/UserDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/target/classes/lib/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/target/classes/module-info.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/convert/OrderConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/convert/OrderConvertor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/convert/UserConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/convert/UserConvertor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/dao/impl/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/dao/impl/ProductDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/dao/interfaces/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/dao/interfaces/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/model/UserId.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/model/UserId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/service/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/service/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/service/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/server/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/server/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/dao/interfaces/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/dao/interfaces/ProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/server/model/User.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/classes/server/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/server/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/server/service/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/server/service/UserServiceImpl.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639597316883</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="&quot;order&quot;">
+      <created>1639776804349</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639776804349</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -273,7 +262,8 @@
     <MESSAGE value="&quot;improve User, UserDTO, UserService&quot;" />
     <MESSAGE value="&quot;improve Address, Category, Loggin&quot;" />
     <MESSAGE value="&quot;delete&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;delete&quot;" />
+    <MESSAGE value="&quot;order&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;order&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -311,13 +301,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/server/convert/OrderConvertor.java</url>
-          <line>39</line>
+          <line>37</line>
           <option name="timeStamp" value="140" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/client/gui/OrderFrame.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/client/controller/ProductController.java</url>
@@ -326,7 +311,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/client/gui/ProductFrame.java</url>
-          <line>128</line>
+          <line>117</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -356,12 +341,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/server/convert/OrderConvertor.java</url>
-          <line>27</line>
+          <line>25</line>
           <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/server/convert/OrderConvertor.java</url>
-          <line>51</line>
+          <line>48</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
       </breakpoints>

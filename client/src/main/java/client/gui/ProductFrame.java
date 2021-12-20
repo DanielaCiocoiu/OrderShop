@@ -47,17 +47,6 @@ public class ProductFrame extends JFrame {
         addOrderButton.addActionListener(e -> addOrder());
 
 
-/*        jProductList.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                  var selected = (ProductDTO) jProductList.getSelectedValue();
-
-                    if (selected != null && e.getClickCount() == 2) {
-                        new OrderFrame(selected.getId());
-                    }
-                }
-            });*/
-
         jProductList.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

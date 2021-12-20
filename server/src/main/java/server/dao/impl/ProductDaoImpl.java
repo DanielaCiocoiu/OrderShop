@@ -34,12 +34,6 @@ public class ProductDaoImpl implements ProductDao {
         query.setParameter("userName", userId.getUserName());
         return query.getResultList();
     }
-/*    @Override
-    public Product findProductByUser(int userId) {
-        var query = entityManager.createQuery("SELECT p from Product p WHERE p.user.userId.userName = :userName", Product.class);
-        query.setParameter("userName", userId.getUserName());
-        return query.getSingleResult();
-    }*/
 
     @Override
     public Product getById(int id) {

@@ -1,7 +1,6 @@
 package client.gui;
 
 import client.controller.OrderController;
-import lib.dto.OrderDTO;
 
 import javax.swing.*;
 
@@ -10,8 +9,7 @@ public class OrderFrame extends JFrame {
     private JPanel mainPanel;
 
     public OrderFrame(int productId) {
-        //refresh();
-        
+
         var model = new DefaultListModel<>();
 
         var orders = OrderController.getInstance().findByProductId(productId);
@@ -29,10 +27,4 @@ public class OrderFrame extends JFrame {
         setVisible(true);
     }
 
-/*    private void refresh() {
-        int productId = 0; // ????
-        var orders = OrderController.getInstance().findByProductId(productId);
-        model.clear();
-        orders.forEach(model::addElement);
-    }*/
 }

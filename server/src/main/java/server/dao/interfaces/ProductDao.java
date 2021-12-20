@@ -20,5 +20,4 @@ public interface ProductDao {
 
     void  delete(Product product);
 
-   // Product findProductByUser(int id);
 }

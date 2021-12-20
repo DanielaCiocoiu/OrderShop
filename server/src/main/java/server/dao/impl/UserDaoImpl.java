@@ -1,14 +1,11 @@
 package server.dao.impl;
 
-import lib.dto.UserDTO;
-import server.convert.UserConvertor;
 import server.dao.interfaces.UserDao;
 import server.model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import javax.transaction.Transactional;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -44,10 +41,10 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public Optional<User> findByCNP(String CNP){
+    public Optional<User> findByCNP(String CNP) {
 
         TypedQuery<User> namedQuery = entityManager.createNamedQuery("User.findByCNP", User.class);
-        namedQuery.setParameter("CNP", CNP );
+        namedQuery.setParameter("CNP", CNP);
         return namedQuery.getResultStream().findFirst();
     }
 

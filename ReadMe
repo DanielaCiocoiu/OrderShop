@@ -1,0 +1,26 @@
+This is a distributed application created on 3 layers of arhitecture: 1 -> dataBase; 2 -> server; 3 -> client.
+
+To create the app I’m using JPA with Hibernate, ORM, RMI and Swing for the client side.
+
+The app is designed for the order shop services.
+
+The java code is divided in 3 parts.
+
+1.	server:  contains the business logic, the entities that are mapped to the the tables on the databse.
+2.	lib: that containes the dto’s and the interfaces that connect the server and the client throuh RMI.
+3.	client: contains all the view pages and components made with swing and also the controllers.
+
+Client side views:
+
+1.	LoginPage: create new user or enter credentials here (username and password) to login into the app.
+
+2.	ProductFrame: here add new product for the user to database so it can use it in the process of creating a order.
+Add button = serves to add a new product
+AddOrder button = serves to add a product or more to the Order Page.
+Delete function with delete key pressed
+
+3. OrderFrame which contains all products ordered.
+
+To create this app I used a MySql database, due to the usage of abstraction offerd by JPA and JPQL.
+ The database and tables are created automatically.
+ The app has 2 main methods: one for the server and one for the client. IDE used: IntelliJ IDEA.
